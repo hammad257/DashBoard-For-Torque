@@ -12,7 +12,6 @@ function JoinSlack() {
           </SlackLogo>
           <SlackText>
             <SlackHead>Engage with clients</SlackHead>
-            <SlackFoot>Join slack channel</SlackFoot>
           </SlackText>
         </Slack>
         <SlackJoin>Join Now</SlackJoin>

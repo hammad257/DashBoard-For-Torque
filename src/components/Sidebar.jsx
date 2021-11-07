@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { RiHomeLine, RiFileCopyLine } from "react-icons/ri";
+import { FiLogOut } from "react-icons/fi";
 import { FaWallet } from "react-icons/fa";
 import { AiOutlinePieChart } from "react-icons/ai";
 import Badge from "./Badge";
@@ -11,32 +12,30 @@ function Sidebar() {
     <Container>
       <ProfileContainer>
         <Avatar src={AvatarImage}/>
-        <Name>Hammad Azam</Name>
-        <Badge content="Pro Level" />
+        <Name>Hammad</Name>
+        <Badge content="26" />
       </ProfileContainer>
       <LinksContainer>
         <Links>
           <Link>
             <RiHomeLine />
-            <h3>Home</h3>
+           
           </Link>
           <Link>
             <RiFileCopyLine />
-            <h3>Copy</h3>
+           
           </Link>
           <Link>
             <FaWallet />
-            <h3>Wallet</h3>
+         
           </Link>
           <Link>
             <AiOutlinePieChart />
-            <h3>Chart</h3>
+         
           </Link>
         </Links>
-        <ContactContainer>
-          <span>Having troubles?</span>
-          <a href="#">Contact us </a>
-        </ContactContainer>
+     
+        <FiLogOut style={{marginLeft:'45px',marginTop:'90px',color:'white'}}/>
       </LinksContainer>
     </Container>
   );

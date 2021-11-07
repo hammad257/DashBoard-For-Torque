@@ -5,14 +5,14 @@ function Navbar() {
   return (
     <NavbarContainer>
       <Text>
-        Good morning,
-        <span> Hammad</span>
+        FeedBack
+        <span> Help</span>
       </Text>
       <InputContainer>
         <Icon>
           <FiSearch />
         </Icon>
-        <Input type="text" placeholder="Search for projects" />
+        <Input type="text" placeholder="Search" />
       </InputContainer>
     </NavbarContainer>
   );

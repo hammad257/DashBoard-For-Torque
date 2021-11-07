@@ -1,30 +1,78 @@
-import React from "react";
+import React,{useState} from "react";
 import styled from "styled-components";
 import AvatarImage from "../assets/avatarImage2.jpg";
 import AvatarImage2 from "../assets/avatarImage3.jpg";
 import { cardShadow, hoverEffect, themeColor } from "../utils";
+import { Chart } from 'primereact/chart';
+
 
 function Projects() {
+
+  const[totalChats,setTotalChats]=useState([])
+  const[totaldays,setTotaldays]=useState([])
+
+  const stackedData = {
+    labels:totaldays, 
+    datasets: [{
+        type: 'bar',
+        label: 'Chats',
+        backgroundColor: '#42A5F5',
+        data:totalChats
+    }]
+};
+
+const getLightTheme = () => {      
+  let stackedOptions = {
+      tooltips: {
+          mode: 'index',
+          intersect: false
+      },
+      responsive: true,
+      scales: {
+          xAxes: [{
+              stacked: false,
+              ticks: {
+                  fontColor: '#495057'
+              },
+              gridLines: {
+                  color: '#ebedef'
+              }
+          }],
+          yAxes: [{
+              stacked: false,
+              ticks: {
+                  fontColor: '#495057'
+              },
+              gridLines: {
+                  color: '#ebedef'
+              }
+          }]
+      },
+      legend: {
+          labels: {
+              fontColor: '#495057'
+          }
+      }
+  };
+
+  return {
+      stackedOptions
+  }
+}
+
+
+
+const {stackedOptions } = getLightTheme();
+  
   return (
     <YourProjects>
       <Project>
-        <Avatar>
-          <img src={AvatarImage} alt="" />
-        </Avatar>
+      
         <Detail>
-          <Title>Logo design for Bakery</Title>
-          <SubTitle>1 day remaining</SubTitle>
+        <Chart type="line" data={stackedData} options={stackedOptions} />
         </Detail>
       </Project>
-      <Project>
-        <Avatar>
-          <img src={AvatarImage2} alt="" />
-        </Avatar>
-        <Detail>
-          <Title>Personal branding project</Title>
-          <SubTitle>5 days remaining</SubTitle>
-        </Detail>
-      </Project>
+    
       <AllProjects>See all projects</AllProjects>
     </YourProjects>
   );

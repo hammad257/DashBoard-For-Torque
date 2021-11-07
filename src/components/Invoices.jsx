@@ -1,44 +1,44 @@
-import React from "react";
+import React,{useState} from "react";
 import styled from "styled-components";
 import Badge from "./Badge";
 import AvatarImage from "../assets/avatarImage5.jpg";
 import AvatarImage2 from "../assets/avatarImage6.jpg";
 import { cardShadow, hoverEffect } from "../utils";
+import { Rating } from 'primereact/rating';
 
 function Invoices() {
+
+  const [val1, setVal1] = useState(null);
   return (
     <InvoicesContainer>
       <CardContent>
         <Invoice>
           <Info>
-            <Avatar>
-              <img src={AvatarImage} alt="" />
-            </Avatar>
+           
             <TextContainer>
-              <Title>Alexander Williams</Title>
-              <SubTitle>ABC Holdings</SubTitle>
+              <Title>Statuses</Title>
+              <SubTitle></SubTitle>
             </TextContainer>
           </Info>
           <Container>
-            <Badge content="Paid" paid />
+            <Badge content="Pending" paid />
             <Price>$ 1,200.87</Price>
           </Container>
         </Invoice>
         <Invoice>
           <Info>
-            <Avatar>
-              <img src={AvatarImage2} alt="" />
-            </Avatar>
+          
             <TextContainer>
-              <Title>John Philips</Title>
-              <SubTitle>Inchor Associates</SubTitle>
+            <Rating value={val1} onChange={(e) => setVal1(e.value)} />
             </TextContainer>
           </Info>
           <Container>
-            <Badge content="Late" late />
+            <Badge content="InProgress" late />
             <Price>$ 1,200.87</Price>
           </Container>
         </Invoice>
+    
+        
       </CardContent>
     </InvoicesContainer>
   );

@@ -1,35 +1,35 @@
-import React from "react";
+import React,{useState} from "react";
 import styled from "styled-components";
 import Badge from "./Badge";
 import AvatarImage from "../assets/avatarImage4.jpg";
 import { cardShadow, hoverEffect } from "../utils";
+import { Calendar } from 'primereact/calendar';
+
 
 function ProjectRecommendation() {
+
+  const [date1, setDate1] = useState(null);
   return (
     <RecommendProject>
       <CardContent>
         <Detail>
           <InfoContainer>
-            <Avatar>
-              <img src={AvatarImage} alt="" />
-            </Avatar>
+           
             <Info>
-              <InfoName>Thomas Martin</InfoName>
-              <InfoUpdate>Updated 10m ago</InfoUpdate>
+              <InfoName>Calender</InfoName>
+              {/* <InfoUpdate>Updated 10m ago</InfoUpdate> */}
             </Info>
           </InfoContainer>
-          <Badge content="Design" />
+          <Badge content="Honda Accord Engine" />
         </Detail>
-        <Title>
-          Need a designer to form branding essentials for my business.
-        </Title>
+       
         <ProjectInfo>
-          Looking for a talented brand designer to create all the branding
-          materials for my new startup.
+ 
+        <Calendar placeholder="Please click me" id="basic" value={date1} onChange={(e) => setDate1(e.value)} />
         </ProjectInfo>
         <PriceContainer>
-          <Price>$8700/month</Price>
-          <Badge content="Full Time" clean />
+          <Price>Engine Oil change</Price>
+          <Badge content="Honda Accord" clean />
         </PriceContainer>
       </CardContent>
     </RecommendProject>
